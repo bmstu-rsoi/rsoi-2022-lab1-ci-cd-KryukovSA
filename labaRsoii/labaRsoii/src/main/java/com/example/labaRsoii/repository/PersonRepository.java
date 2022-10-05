@@ -2,13 +2,14 @@ package com.example.labaRsoii.repository;
 
 import com.example.labaRsoii.model.entity.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface PersonRepository extends JpaRepository<Person, Integer> {
-    Person getById(int id);
+    Person getPersonById(int id);
     List<Person> findAll();
-    Object savePerson (Person person);
     void deletePersonById(int id);
-    Person updatePersonById(int id, Person person);
 }
+

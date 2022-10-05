@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @Entity(name = "person")
 public class Person {
     @Id
-    private int id;
+    private Integer id;
 
     @Column
     private String name;
