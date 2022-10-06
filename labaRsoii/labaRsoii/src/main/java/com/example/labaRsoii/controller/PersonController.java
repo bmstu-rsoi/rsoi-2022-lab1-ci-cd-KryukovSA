@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "/request/person")
+@RequestMapping(path = "/request/persons")
 public class PersonController {
     private final PersonService personService;
 
@@ -25,7 +25,7 @@ public class PersonController {
             return ResponseEntity.ok(personService.getPerson(id));
         } catch (NullPointerException e){
             e.printStackTrace();
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
