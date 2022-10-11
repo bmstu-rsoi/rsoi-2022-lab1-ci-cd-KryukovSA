@@ -60,7 +60,7 @@ public class PersonController {
         log.info("DELETE info by key " + id);
         try {
             personService.deletePersonById(id);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         } catch (NullPointerException e){
             e.printStackTrace();
             return ResponseEntity.badRequest().build();
