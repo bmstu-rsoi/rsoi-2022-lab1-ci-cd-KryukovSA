@@ -44,7 +44,7 @@ public class PersonServiceTest {
 
     @Test
     public void useNumberOfInteractions_NotSave(){
-        person.setId(null);
+        person.setAge(-10);
         try {
             service.savePerson(person);
         } catch (IllegalArgumentException ex) {
