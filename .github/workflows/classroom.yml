@@ -32,10 +32,10 @@ jobs:
       - name: Deploy Heroku
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        heroku_app_name: lab1-rsoi
-        heroku_email: ${{secrets.HEROKU_EMAIL}}
-        usedocker: true
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: lab1-rsoi
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
