@@ -38,7 +38,7 @@ jobs:
           usedocker: true
 
       - name: Wait for Deploy on Heroku
-        run: sleep 35s
+        run: sleep 60s
         shell: bash
 
       - name: Run API Tests
