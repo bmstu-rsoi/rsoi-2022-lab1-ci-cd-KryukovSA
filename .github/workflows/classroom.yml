@@ -14,26 +14,21 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
       # TODO build
-
-  - name: Setup JDK 17
-      uses: actions/setup-java@v1
-      with:
-        java-version: '17.0.2'
-        distribution: 'adopt'
-
-  #test
-  - name: Build with Maven
-      run: mvn -B package --file pom.xml
-        -
+      - name: Setup JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: '17.0.2'
+          distribution: 'adopt'
+      #test
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
       - name: Maven Run Unit Tests
         run: mvn -B test
 
       - name: Maven Package
         run: mvn -B clean package
-
-#deploy
+      #deploy
       - name: Deploy Heroku
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
