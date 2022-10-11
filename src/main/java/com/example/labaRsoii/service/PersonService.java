@@ -31,7 +31,7 @@ public class PersonService {
 
     @Transactional
     public Object savePerson (Person person) throws IllegalArgumentException {
-        if(person == null || person.getAge() < 0 || person.getId() == null)
+        if(person == null || person.getAge() < 0 )
             throw new IllegalArgumentException("incorrect input");
         else {
             return personRepository.save(person);
